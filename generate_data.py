@@ -11,11 +11,13 @@ industry_type = [
     'Food Industry', 'Health Industry', 'Entertainment Industry', 'Electronics Industry', 'Energy Industry'
 ]
 
+education_degree = ['Bachelor', 'Master', 'MBA', 'PhD']
+
 
 def generate_fake_data():
     with open('dataset.csv', 'w', newline='') as file:
         writer = csv.writer(file, delimiter=",")
-        writer.writerow(["Gender", "Manager Level", "Title", "Industry Type", "Age",
+        writer.writerow(["Gender", "Manager Level", "Title", "Industry Type", "Age", "Education Degree"
                          "Confident", "Capable", "Efficient", "Intelligent", "Friendly",
                          "Trustworthy", "Warm", "Sincere", "Jealous", "Envious", "Admiring", "Proud",
                          "Respectful", "Inspired", "Angry", "Disgusted", "Hateful", "Frustrated", "Ashamed", "Pity",
@@ -29,6 +31,7 @@ def generate_fake_data():
                              title[random.randrange(0, len(title))],
                              industry_type[random.randrange(0, len(industry_type))],
                              random.randrange(38, 60),  # age
+                             education_degree[random.randrange(0, len(education_degree))],  # education degree
                              random.randrange(1, 11),  # Confident
                              random.randrange(1, 11),  # Capable
                              random.randrange(1, 11),  # Efficient
