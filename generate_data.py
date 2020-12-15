@@ -5,11 +5,6 @@ gender = ['Male', 'Female']
 manager_level = ['Top', 'Middle', 'Level']
 title = ['President', 'Vice-president', 'C-Level', 'Organizational Manager', 'Assistant Manager', 'Supervisor',
          'Board Member']
-industry_type = [
-    'Aerospace Industry', 'Transport Industry', 'Computer Industry', 'Telecommunication Industry',
-    'Agriculture Industry', 'Construction Industry', 'Education Industry', 'Pharmaceutical Industry',
-    'Food Industry', 'Health Industry', 'Entertainment Industry', 'Electronics Industry', 'Energy Industry'
-]
 
 education_degree = ['Bachelor', 'Master', 'MBA', 'PhD']
 level_of_acceptance = ['Strongly Agree', 'Agree', 'Neutral', 'Disagree', 'Strongly Disagree']
@@ -18,7 +13,7 @@ level_of_acceptance = ['Strongly Agree', 'Agree', 'Neutral', 'Disagree', 'Strong
 def generate_fake_data():
     with open('dataset.csv', 'w', newline='') as file:
         writer = csv.writer(file, delimiter=",")
-        writer.writerow(["Gender", "Manager Level", "Title", "Industry Type", "Age", "Education Degree",
+        writer.writerow(["Gender", "Manager Level", "Title", "Age", "Education Degree",
                          "Confident", "Capable", "Efficient", "Intelligent", "Friendly", "Trustworthy", "Warm",
                          "Sincere", "Jealous", "Envious", "Admiring", "Proud", "Inspired", "Angry",
                          "Disgusted", "Hateful", "Frustrated", "Ashamed", "Pity", "Sympathy"])
@@ -27,7 +22,6 @@ def generate_fake_data():
             writer.writerow([gender[random.randrange(0, len(gender))],  # Gender
                              manager_level[random.randrange(0, len(manager_level))],  # Manager Level
                              title[random.randrange(0, len(title))],  # Title
-                             industry_type[random.randrange(0, len(industry_type))],  # Industry Type
                              random.randrange(38, 60),  # age
                              education_degree[random.randrange(0, len(education_degree))],  # education degree
                              level_of_acceptance[random.randrange(0, len(level_of_acceptance))],  # Confident
