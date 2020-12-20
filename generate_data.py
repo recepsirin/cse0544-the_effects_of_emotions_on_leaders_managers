@@ -7,7 +7,7 @@ title = ['President', 'Vice-president', 'C-Level', 'Organizational Manager', 'As
          'Board Member']
 
 education_degree = ['Bachelor', 'Master', 'MBA', 'PhD']
-level_of_acceptance = ['Strongly Agree', 'Agree', 'Neutral', 'Disagree', 'Strongly Disagree']
+user_response = ['Strongly Agree', 'Agree', 'Neutral', 'Disagree', 'Strongly Disagree']
 
 
 def generate_fake_data():
@@ -18,11 +18,12 @@ def generate_fake_data():
                          "Sincere", "Jealous", "Envious", "Admiring", "Proud", "Inspired", "Angry",
                          "Disgusted", "Hateful", "Frustrated", "Ashamed", "Pity", "Sympathy"])
 
-        for l in range(1, 2001):
+        for l in range(0, 2000):
+            level_of_acceptance = sorted(user_response, key=lambda x: random.random())
             writer.writerow([gender[random.randrange(0, len(gender))],  # Gender
                              manager_level[random.randrange(0, len(manager_level))],  # Manager Level
                              title[random.randrange(0, len(title))],  # Title
-                             random.randrange(38, 60),  # age
+                             random.randrange(32, 60),  # age
                              education_degree[random.randrange(0, len(education_degree))],  # education degree
                              level_of_acceptance[random.randrange(0, len(level_of_acceptance))],  # Confident
                              level_of_acceptance[random.randrange(0, len(level_of_acceptance))],  # Capable
